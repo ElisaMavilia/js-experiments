@@ -136,17 +136,32 @@ function findACountry(name){
 }
 let newCountry = findACountry('France');
 newCountry = findACountry('Germany');
+let founded = false;
 
-function findAndReplace (countryOut,  countryIn){
+/* function findAndReplace (countryOut,  countryIn){
     const index = italyNeighbour.indexOf(countryOut);
    if (index !== -1){ //if the index is found
     italyNeighbour[index] = countryIn;
+   }else {
+    console.log('No matching found');
    }
    
-}
+}  */
 
-const replaceCountry = findAndReplace('France', 'Republic of France');
+   function findAndReplace (countryOut, countryIn){
+    for (i = 0; i < italyNeighbour.length; i++) {
+        if (italyNeighbour[i] === countryOut){
+            founded = true;
+            italyNeighbour[i] = countryIn;
+        }else {
+            console.log('No matching found')
+        }
+    }
+   } 
+
+const replaceCountry = findAndReplace('Switzerland', 'Swiss');
 console.log(italyNeighbour);
 
-const replaceCountry2 = findAndReplace('Austria', 'Republic of Austria');
+const replaceCountry2 = findAndReplace('Austria', 'Republic of Austria'); 
+
 console.log(italyNeighbour);
