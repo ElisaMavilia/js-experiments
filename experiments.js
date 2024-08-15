@@ -25,7 +25,7 @@ const computerChoice = saveNumsAndConvert();
 function matchResult() {
     userChoice = prompt('Insert your choise').toLowerCase();
 
-    if (userChoice !== 'rock' && userChoise !== 'scissors' && userChoice !== 'paper') {
+    if (userChoice !== 'rock' && userChoice !== 'scissors' && userChoice !== 'paper') {
         userChoice = prompt('Invalid input. Please insert either "rock", "scissors", or "paper":');
     }
     console.log('User:', userChoice);
