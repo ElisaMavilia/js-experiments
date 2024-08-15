@@ -1,51 +1,57 @@
-'use strict'; 
+'use strict';
 
 // SCISSORS, ROCK, PAPER
 
-function saveNumsAndConvert(){
+function saveNumsAndConvert() {
 
-    let num =  Math.floor((Math.random()*3)+1);
+    let num = Math.floor((Math.random() * 3) + 1);
 
-    if (num === 1){
+    if (num === 1) {
         num = 'scissors'
-        console.log(num);
-    } else if(num === 2){
+        console.log('Computer:', num);
+    } else if (num === 2) {
         num = 'rock'
-        console.log(num);
-    } else if(num === 3){
+        console.log('Computer:', num);
+    } else if (num === 3) {
         num = 'paper'
-        console.log(num);
+        console.log('Computer:', num);
     }
-
     return num;
 }
 
-/* const conversion = saveNumsAndConvert(); */
+let userChoise = '';
+const computerChoise = saveNumsAndConvert();
 
+function matchResult() {
+    userChoise = prompt('Insert your choise').toLowerCase();
 
-function userMatch(){
-
-    const userOne = saveNumsAndConvert();
-    const userTwo = saveNumsAndConvert();
-
-   if(userOne === "scissors" && userTwo === "rock"){
-    console.log(`User 2 wins! Rock wins over the Scissors`);
-   } else if (userOne === "scissors" && userTwo=== "paper"){
-    console.log(`User 1 wins! Scissors wins over the Paper`);
-   } else if (userOne === "rock" && userTwo === "paper"){
-    console.log(`User 2 wins! Paper wins over the rock`);
-    } else if (userOne === "rock" && userTwo === "scissors"){
-        console.log(`User 1 wins! Rock wins over the Scissors`);
-    } else if(userOne === "paper" && userTwo === "scissors"){
-        console.log(`User 2 wins! Scissors wins over the Paper`);
-    } else if (userOne === "paper" && userTwo === "rock"){
-        console.log(`User 1 wins! Paper wins over the rock`);
-    } else if (userOne === userTwo){
-        console.log('Pareggio! Try again...');
+    if (userChoise !== 'rock' && userChoise !== 'scissors' && userChoise !== 'paper') {
+        userChoise = prompt('Invalid input. Please insert either "rock", "scissors", or "paper":');
     }
+    console.log('User:', userChoise);
+    
+    if (userChoise === "scissors" && computerChoise === "rock") {
+        console.log(`Computer wins! Rock wins over Scissors`);
+    } else if (userChoise === "scissors" && computerChoise === "paper") {
+        console.log(`User wins! Scissors wins over Paper`);
+    } else if (userChoise === "rock" && computerChoise === "paper") {
+        console.log(`Computer wins! Paper wins over Rock`);
+    } else if (userChoise === "rock" && computerChoise === "scissors") {
+        console.log(`User wins! Rock wins over Scissors`);
+    } else if (userChoise === "paper" && computerChoise === "scissors") {
+        console.log(`Computer wins! Scissors wins over Paper`);
+    } else if (userChoise === "paper" && computerChoise === "rock") {
+        console.log(`User wins! Paper wins over Rock`);
+    } else if (userChoise === computerChoise) {
+        console.log('Fair! Try again...');
+    }
+
 }
 
-const result = userMatch();
+const result = matchResult();
+
+
+
 
 
 
