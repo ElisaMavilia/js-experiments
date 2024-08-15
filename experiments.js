@@ -19,33 +19,32 @@ function saveNumsAndConvert() {
     return num;
 }
 
-let userChoise = '';
-const computerChoise = saveNumsAndConvert();
+let userChoice = '';
+const computerChoice = saveNumsAndConvert();
 
 function matchResult() {
-    userChoise = prompt('Insert your choise').toLowerCase();
+    userChoice = prompt('Insert your choise').toLowerCase();
 
-    if (userChoise !== 'rock' && userChoise !== 'scissors' && userChoise !== 'paper') {
-        userChoise = prompt('Invalid input. Please insert either "rock", "scissors", or "paper":');
+    if (userChoice !== 'rock' && userChoise !== 'scissors' && userChoice !== 'paper') {
+        userChoice = prompt('Invalid input. Please insert either "rock", "scissors", or "paper":');
     }
-    console.log('User:', userChoise);
+    console.log('User:', userChoice);
     
-    if (userChoise === "scissors" && computerChoise === "rock") {
+    if (userChoice === "scissors" && computerChoice === "rock") {
         console.log(`Computer wins! Rock wins over Scissors`);
-    } else if (userChoise === "scissors" && computerChoise === "paper") {
+    } else if (userChoice === "scissors" && computerChoice === "paper") {
         console.log(`User wins! Scissors wins over Paper`);
-    } else if (userChoise === "rock" && computerChoise === "paper") {
+    } else if (userChoice === "rock" && computerChoice === "paper") {
         console.log(`Computer wins! Paper wins over Rock`);
-    } else if (userChoise === "rock" && computerChoise === "scissors") {
+    } else if (userChoice === "rock" && computerChoice === "scissors") {
         console.log(`User wins! Rock wins over Scissors`);
-    } else if (userChoise === "paper" && computerChoise === "scissors") {
+    } else if (userChoice === "paper" && computerChoice === "scissors") {
         console.log(`Computer wins! Scissors wins over Paper`);
-    } else if (userChoise === "paper" && computerChoise === "rock") {
+    } else if (userChoice === "paper" && computerChoice === "rock") {
         console.log(`User wins! Paper wins over Rock`);
-    } else if (userChoise === computerChoise) {
+    } else if (userChoice === computerChoice) {
         console.log('Fair! Try again...');
     }
-
 }
 
 const result = matchResult();
